@@ -1,5 +1,6 @@
 import { Component } from "react";
 import PostCard from "../PostCard";
+import './styles.css';
 
 class Posts extends Component {
     render() {
