@@ -6,12 +6,16 @@ class PostCard extends Component {
         const { post } = this.props;
 
         return (
-            <div className="post">
-                <img src={post.cover} alt={post.title} />
-                <div className="post-content">
-                    <h1>{post.id} - {post.title}</h1>
-                    <p>{post.body}</p>
-                    <br></br>
+            <div class="col">
+                <div class="card shadow-sm post">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="225" src={post.cover} alt={post.title} />
+                    <div class="card-body">
+                        <h3>{post.title}</h3>
+                        <p class="card-text">{post.body}</p>
+                        <div class="d-flex">
+                            <small class="text-muted">{post.id}</small>
+                        </div>
+                    </div>
                 </div>
             </div>
         )

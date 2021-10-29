@@ -1,4 +1,3 @@
-import './styles.css';
 import { Component } from 'react';
 import { loadPosts } from '../../utils/load-posts';
 import Posts from '../../components/Posts';
@@ -47,19 +46,16 @@ class Home extends Component {
         const noMorePosts = page + postsPerPage >= allPosts.length;
 
         return (
-            <section className="container">
-                
-                <h1>Search value: {searchValue}</h1>
-                <br /><br />
-                <input type="search" value={searchValue} onChange={this.handleChange} />
-                <br /><br /><br /><br />
-
-                <Posts posts={posts} />
-
-                <div className="button-container">
+            <main className="container">
+                <div class="bg-light p-5 rounded">
+                    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+                        <h4 class="fw-normal">Search value: {searchValue}</h4>
+                        <input type="search" className="form-control" value={searchValue} onChange={this.handleChange} />
+                    </div>
+                    <Posts posts={posts} />
                     <Button text='Load more posts' onClick={this.loadMorePosts} disabled={noMorePosts} />
                 </div>
-            </section>
+            </main>
         );
     }
 }
